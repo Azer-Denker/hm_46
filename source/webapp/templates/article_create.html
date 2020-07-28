@@ -8,17 +8,20 @@
     <form action="{% url "article_create" %}" method="post">
         {% csrf_token %}
 
-        <label>Title:</label><br/>
+        <label>Загаловок:</label><br/>
         <input type="text" name="title"/><br/>
 
-        <label>Text:</label><br/>
+        <label>Текст:</label><br/>
         <textarea name="text"></textarea><br/>
 
-        <label>TextField:</label><br/>
+        <label>Подробный текст:</label><br/>
         <textarea name="text_full"></textarea><br/>
 
-        <label>Author:</label><br/>
+        <label>Автор:</label><br/>
         <input type="text" name="author"/><br/>
+
+        <label>Срок:</label><br/>
+        <input type="date" name="created_at"/><br/>
 
         <label for="id-status">Status:</label><br/>
         <select name="status" id="id-status">

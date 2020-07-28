@@ -4,10 +4,12 @@
 
 {% block content %}
     <h1>Статьи:</h1>
+    <h2>Загаловоки</h2>
     {% for article in articles %}
         <h3><a href="{% url "article_view" article.pk %}">{{ article.title }}</a></h3>
         <p>Статус: ({{ article.status }} | {{ article.get_status_display }})</p>
-        <p>{{ article.author }} | {{ article.created_at }}</p>
+        <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
         <div>{{ article.text }}</div>
+        <p>Дата создания: {{ article.time }}</p>
     {% endfor %}
 {% endblock %}

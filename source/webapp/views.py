@@ -32,7 +32,9 @@ def article_create_view(request):
         text_full = request.POST.get('text_full')
         author = request.POST.get('author')
         status = request.POST.get('status')
-        article = Article.objects.create(title=title, text=text, text_full=text_full, author=author, status=status)
+        created_at = request.POST.get('created_at')
+        time = request.POST.get('time')
+        article = Article.objects.create(time=time, title=title, text=text, text_full=text_full, author=author, status=status, created_at=created_at)
 
         return redirect('article_view', pk=article.pk)
     else:

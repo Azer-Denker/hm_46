@@ -3,12 +3,19 @@
 {% block title %}List{% endblock %}
 
 {% block content %}
-    <h1>{{ article.title }}</h1>
+    <h1>Загаловок: {{ article.title }}</h1>
+    <h1>Текст</h1>
     <p>{{ article.text }}</p>
-    <p>By: {{ article.author }} | {{ article.created_at }}</p>
+    <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
+    {% if article.created_at == None %}
+        <p>Автор: {{ article.author }} | Срок: {{ 'нет' }}</p>
+    {% else %}
+        <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
+    {% endif %}
     {% if article.text_full == None %}
         <p>{{ '' }}</p>
     {% else %}
-        <p>{{ article.text_full }}</p>
+        <p>Подробный текст: {{ article.text_full }}</p>
     {% endif %}
+    <p>Дата созданя: {{ article.time }}</p>
 {% endblock %}
