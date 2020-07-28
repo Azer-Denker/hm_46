@@ -29,7 +29,7 @@ def article_create_view(request):
     elif request.method == 'POST':
         title = request.POST.get('title')
         text = request.POST.get('text')
-        text_full = request.POST.get('text_2')
+        text_full = request.POST.get('text_full')
         author = request.POST.get('author')
         status = request.POST.get('status')
         article = Article.objects.create(title=title, text=text, text_full=text_full, author=author, status=status)

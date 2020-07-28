@@ -8,7 +8,7 @@
     <p>By: {{ article.author }} | {{ article.created_at }}</p>
     {% if article.text_full == None %}
         <p>{{ '' }}</p>
-    {% elif article.text_full == not_None %}
+    {% else %}
         <p>{{ article.text_full }}</p>
     {% endif %}
 {% endblock %}
