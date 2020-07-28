@@ -13,7 +13,7 @@ class Article(models.Model):
     text_full = models.TextField(max_length=3000, null=True, blank=True, verbose_name='Текст_Полный')
     author = models.CharField(max_length=40, null=False, blank=False, default='Unknown', verbose_name='Автор')
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='new', verbose_name='Модерация')
-    created_at = models.DateField(auto_now_add=False, default=None, verbose_name='Время создания')
+    data = models.DateField(auto_now_add=False, default=None, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
 
