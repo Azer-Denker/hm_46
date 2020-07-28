@@ -6,7 +6,7 @@
     <h1>Загаловок: {{ article.title }}</h1>
     <h1>Текст</h1>
     <p>{{ article.text }}</p>
-    <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
+    <p>Автор: {{ article.author }} | Срок: {{ article.data }}</p>
     {% if article.text_full == None %}
         <p>{{ '' }}</p>
     {% else %}
