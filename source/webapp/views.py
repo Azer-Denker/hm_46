@@ -5,11 +5,7 @@ from webapp.models import Article, STATUS_CHOICES
 
 
 def index_view(request):
-    is_admin = request.GET.get('is_admin', None)
-    if is_admin:
-        data = Article.objects.all()
-    else:
-        data = Article.objects.filter(status='moderated')
+    data = Article.objects.all()
     return render(request, 'index.html', context={
         'articles': data
     })
@@ -33,8 +29,7 @@ def article_create_view(request):
         author = request.POST.get('author')
         status = request.POST.get('status')
         created_at = request.POST.get('created_at')
-        time = request.POST.get('time')
-        article = Article.objects.create(time=time, title=title, text=text, text_full=text_full, author=author, status=status, created_at=created_at)
+        article = Article.objects.create(title=title, text=text, text_full=text_full, author=author, status=status, created_at=created_at,)
 
         return redirect('article_view', pk=article.pk)
     else:

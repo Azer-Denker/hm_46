@@ -10,6 +10,5 @@
         <p>Статус: ({{ article.status }} | {{ article.get_status_display }})</p>
         <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
         <div>{{ article.text }}</div>
-        <p>Дата создания: {{ article.time }}</p>
     {% endfor %}
 {% endblock %}

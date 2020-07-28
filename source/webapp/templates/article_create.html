@@ -3,7 +3,7 @@
 {% block title %}Create{% endblock %}
 
 {% block content %}
-    <h1>Create Article</h1>
+    <h1>Создать</h1>
 
     <form action="{% url "article_create" %}" method="post">
         {% csrf_token %}
@@ -23,7 +23,7 @@
         <label>Срок:</label><br/>
         <input type="date" name="created_at"/><br/>
 
-        <label for="id-status">Status:</label><br/>
+        <label for="id-status">Статус:</label><br/>
         <select name="status" id="id-status">
             {% for value, label in status_choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -31,6 +31,6 @@
         </select><br/>
 
         <br/>
-        <input type="submit" value="Send"/>
+        <input type="submit" value="Создать"/>
     </form>
 {% endblock %}

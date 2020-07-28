@@ -1,9 +1,9 @@
 from django.db import models
 
 STATUS_CHOICES = [
-    ('new', 'Не модерировано'),
-    ('moderated', 'Модерировано'),
-    ('rejected', 'Отклонено')
+    ('new', 'Новый'),
+    ('moderated', 'В разработке'),
+    ('rejected', 'Сделаные')
 ]
 
 
@@ -14,7 +14,6 @@ class Article(models.Model):
     author = models.CharField(max_length=40, null=False, blank=False, default='Unknown', verbose_name='Автор')
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='new', verbose_name='Модерация')
     created_at = models.DateField(auto_now_add=False, default=None, verbose_name='Время создания')
-    time = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
 

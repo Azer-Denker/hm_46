@@ -7,15 +7,9 @@
     <h1>Текст</h1>
     <p>{{ article.text }}</p>
     <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
-    {% if article.created_at == None %}
-        <p>Автор: {{ article.author }} | Срок: {{ 'нет' }}</p>
-    {% else %}
-        <p>Автор: {{ article.author }} | Срок: {{ article.created_at }}</p>
-    {% endif %}
     {% if article.text_full == None %}
         <p>{{ '' }}</p>
     {% else %}
         <p>Подробный текст: {{ article.text_full }}</p>
     {% endif %}
-    <p>Дата созданя: {{ article.time }}</p>
 {% endblock %}
